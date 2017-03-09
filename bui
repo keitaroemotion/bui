@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+def has_ext(ext)
+  Dir["**/*"].select do |file|
+    file.end_with?(".#{ext}")
+  end.size > 0
+end  
+
+if has_ext("swift")
+  `swift build`
+end
+
